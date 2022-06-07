@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the pages & pagination component.
+// -----------------------------------------------------------------------------
+.pages {
+  @include flex-vertical(center);
+  gap: 60px;
+
+  @include media-medium {
+    gap: 30px;
+  }
+  @include media-small {
+    gap: 42px;
+  }
+}
+.page_wrapper {
+  @include media-large {
+    width: $page-wrapper-large;
+  }
+  @include media-medium {
+    width: $page-wrapper-medium;
+  }
+  @include media-small {
+    width: $page-wrapper-small;
+  }
+
+  overflow: hidden;
+}
+.nav-panel {
+  @include size(340px, $height-button);
+
+  @include flex-horizontal(center);
+
+  @include media-medium {
+    padding-top: 15px;
+  }
+  @include media-small {
+    width: 300px;
+  }
+}
+
+.page {
+  position: relative;
+  left: 0;
+  display: flex;
+
+  .page__item {
+    // display: flex;
+
+    @include flex-horizontal(center);
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include media-small {
+      @include flex-vertical(center);
+    }
+  }
+}
+
+@keyframes fade-page {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-page {
+  animation: fade-page 1000ms linear 1;
+}

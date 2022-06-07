@@ -1,0 +1,129 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.button {
+  @include text-button($color-dark-3xl);
+  border-radius: 100px;
+  text-align: center;
+
+  @extend %transition;
+
+  // -------------------------------------------------------------------------
+  &_primary {
+    // -------------------------------------------------------------------------
+    background: $color-primary;
+    border: none;
+
+    // --------------------------------
+    // _home page
+    // --------------------------------
+    .start-screen & {
+      @include size(207px, $height-button);
+      @include media-medium {
+        margin-left: 126px;
+      }
+    }
+    .pets & {
+      @include size(261px, $height-button);
+    }
+
+    // --------------------------------
+    &:hover {
+      cursor: pointer;
+      background: $color-primary-light;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  &_secondary {
+    // -------------------------------------------------------------------------
+    background: $color-light-s;
+    border: 2px solid $color-primary;
+
+    // --------------------------------
+    .pets-card & {
+      @include size(187px, $height-button);
+    }
+
+    // --------------------------------
+    &:hover,
+    .pets-card:hover & {
+      cursor: pointer;
+      background: $color-primary-light;
+      border: 2px solid $color-primary-light;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  &_arrow {
+    // -------------------------------------------------------------------------
+    @include size($height-button);
+    @include text-h4($color-dark-3xl);
+
+    background: $color-light-l;
+    border: 2px solid $color-primary;
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // --------------------------------
+    // _home page
+    // --------------------------------
+    .pets & {
+      @include media-small {
+        align-self: flex-end;
+        margin: 0 30px;
+      }
+    }
+
+    // --------------------------------
+    &:not(:disabled):hover {
+      cursor: pointer;
+      background: $color-primary-light;
+      border: 2px solid $color-primary-light;
+    }
+    &:disabled {
+      color: $color-dark-s;
+      border: 2px solid $color-dark-s;
+    }
+  }
+  // -------------------------------------------------------------------------
+  &_arrow-active {
+    // -------------------------------------------------------------------------
+    @include size($height-button);
+    @include text-h4($color-dark-3xl);
+
+    background: $color-primary;
+    border: none;
+  }
+}
+
+.link-button {
+  width: 349px;
+  padding: 8px 16px 12px 16px;
+
+  @include flex-horizontal(center);
+
+  @include text-h4($color-dark-l);
+  text-decoration: none;
+
+  background: $color-primary;
+  border: none;
+  border-radius: 9px;
+
+  @extend %transition;
+
+  @include media-small {
+    width: 280px;
+    padding: 10px 16px 10px 16px;
+    @include text-h5($color-dark-l);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $color-primary-light;
+  }
+}

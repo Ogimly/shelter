@@ -1,0 +1,147 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the slider component.
+// -----------------------------------------------------------------------------
+.slider {
+  @include flex-horizontal(center);
+  gap: 53px;
+  @include media-medium {
+    gap: 12px;
+  }
+  @include media-small {
+    @include flex-horizontal(center, center);
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 20px;
+  }
+}
+.carousel_wrapper {
+  @include media-large {
+    width: $carousel-wrapper-large;
+  }
+  @include media-medium {
+    width: $carousel-wrapper-medium;
+  }
+  @include media-small {
+    width: $carousel-wrapper-small;
+    order: -1;
+  }
+
+  overflow: hidden;
+}
+.carousel {
+  position: relative;
+  @include media-large {
+    left: -1 * $carousel-wrapper-large;
+  }
+  @include media-medium {
+    left: -1 * $carousel-wrapper-medium;
+  }
+  @include media-small {
+    left: -1 * $carousel-wrapper-small;
+  }
+  display: flex;
+
+  .carousel__item {
+    // display: flex;
+
+    @include flex-horizontal(center, flex-start);
+
+    @include media-large {
+      gap: 90px;
+    }
+    @include media-medium {
+      gap: 40px;
+    }
+    @include media-small {
+      gap: 0;
+    }
+  }
+
+  // --------------------------------
+  // _pets page
+  // --------------------------------
+  .pets-page-main & {
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include media-small {
+      @include flex-vertical(center);
+    }
+  }
+}
+
+@keyframes move-right-large {
+  from {
+    left: -1 * $carousel-wrapper-large;
+  }
+  to {
+    left: -2 * $carousel-wrapper-large;
+  }
+}
+@keyframes move-right-medium {
+  from {
+    left: -1 * $carousel-wrapper-medium;
+  }
+  to {
+    left: -2 * $carousel-wrapper-medium;
+  }
+}
+@keyframes move-right-small {
+  from {
+    left: -1 * $carousel-wrapper-small;
+  }
+  to {
+    left: -2 * $carousel-wrapper-small;
+  }
+}
+
+.transition-right {
+  @include media-large {
+    animation-name: move-right-large;
+  }
+  @include media-medium {
+    animation-name: move-right-medium;
+  }
+  @include media-small {
+    animation-name: move-right-small;
+  }
+  animation-duration: 1s;
+}
+
+@keyframes move-left-large {
+  from {
+    left: -1 * $carousel-wrapper-large;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes move-left-medium {
+  from {
+    left: -1 * $carousel-wrapper-medium;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes move-left-small {
+  from {
+    left: -1 * $carousel-wrapper-small;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.transition-left {
+  @include media-large {
+    animation-name: move-left-large;
+  }
+  @include media-medium {
+    animation-name: move-left-medium;
+  }
+  @include media-small {
+    animation-name: move-left-small;
+  }
+  animation-duration: 1s;
+}
