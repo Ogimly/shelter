@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// header
+// -----------------------------------------------------------------------------
+header {
+  @include media-large {
+    padding-top: 60px;
+  }
+  @include media-medium {
+    padding-top: 30px;
+  }
+  @include media-small {
+    width: 100%;
+    padding-top: 30px;
+  }
+}
+
+.header__wrapper {
+  @include flex-horizontal(center);
+}
+
+.logo {
+  @include size($width-logo, $height-logo);
+
+  @include flex-vertical(center, space-between);
+
+  a,
+  h1 {
+    @include text-logo-title($color-primary);
+  }
+  p {
+    @include text-logo-subtitle($color-light-xl);
+  }
+}
+
+.header__navigation {
+  width: $width-navigation;
+  //@include size($width-navigation, $height-navigation);
+
+  .logo-burger {
+    display: none;
+  }
+
+  .navigation {
+    list-style: none;
+
+    @include flex-horizontal(center);
+
+    @include text-paragraph-l($color-dark-s);
+  }
+  .nav-link,
+  .nav-link_active {
+    text-decoration: none;
+    color: $color-dark-s;
+
+    @extend %transition;
+  }
+  .nav-link_active,
+  .nav-link:hover {
+    color: $color-light-s;
+  }
+  .nav-link_active {
+    border-bottom: 3px solid $color-primary;
+    padding-bottom: 4px;
+  }
+}
+
+// --------------------------------
+// _pets page
+// --------------------------------
+.pets-page-header header {
+  padding: 30px 0;
+
+  a,
+  h1,
+  p,
+  .nav-link,
+  .nav-link_active {
+    color: $color-dark-l;
+  }
+  .nav-link_active,
+  .nav-link:hover {
+    color: $color-dark-3xl;
+  }
+}

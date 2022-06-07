@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the pets-card component.
+// -----------------------------------------------------------------------------
+.pets-card {
+  @include size($width-pet-card, $height-pet-card);
+
+  padding-bottom: 30px;
+  background: $color-light-s;
+  border-radius: 9px;
+
+  @extend %transition;
+
+  @include flex-vertical(center);
+
+  .pets-card__img {
+    @include size($width-pet-card);
+
+    object-fit: cover;
+
+    border-radius: 9px 9px 0px 0px;
+  }
+  p {
+    @include text-pets-card($color-dark-l);
+  }
+
+  // --------------------------------
+  // _pets page
+  // --------------------------------
+  // .pets-page-main & {
+  //     @include media-medium {
+  //         &:nth-child(7), &:nth-child(8) {
+  //             display: none;
+  //         }
+  //     }
+  //     @include media-small {
+  //         &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)  {
+  //             display: none;
+  //         }
+  //     }
+  // }
+
+  // --------------------------------
+  &:hover {
+    cursor: pointer;
+    background: $color-light-xl;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+}

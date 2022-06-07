@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all wrappers.
+// -----------------------------------------------------------------------------
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  @include media-large {
+    max-width: $content-width;
+  }
+  @include media-medium {
+    max-width: $content-width-medium;
+    //padding: 0 30px;
+  }
+  @include media-small {
+    //max-width: $content-width-small;
+    padding: 0 10px;
+  }
+  margin: 0 auto;
+}

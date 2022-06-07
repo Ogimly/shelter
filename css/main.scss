@@ -1,0 +1,47 @@
+
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/placeholders',
+  'abstracts/mixins';
+
+// 2. Vendors
+//@import
+  //'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/reset',
+  'base/fonts',
+  'base/typography';
+  //'base/helpers',
+
+// 4. Layout-related sections
+@import
+  'layout/wrapper',
+  'layout/header',
+  'layout/burger-menu',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/icon',
+  'components/button',
+  'components/modal',
+  'components/pets-card',
+  'components/slider',
+  'components/pages';
+
+// 6. Page-specific styles
+@import
+  'pages/home',
+  'pages/pets';
+
+// 7. Themes
+//@import
+  //'themes/default',
+  //;

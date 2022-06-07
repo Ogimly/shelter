@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// pets page of project
+// -----------------------------------------------------------------------------
+//** header - additional to _header.css (.pets-page-header) **//
+.pets-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: $color-light-xl;
+}
+
+//** main (.pets-page-main) **//
+.pets-page-main {
+  background: $color-light-l;
+
+  .pets__content {
+    @include flex-vertical(center);
+    gap: 60px;
+    padding: 80px 0 100px 0;
+
+    @include media-medium {
+      padding: 80px 64px 85px 64px;
+      gap: 30px;
+    }
+
+    @include media-small {
+      padding: 42px 0px 42px 0px;
+      gap: 42px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+
+    @include text-h3($color-dark-l);
+    @include media-small {
+      @include text-h3-mobile($color-dark-l);
+    }
+  }
+}
+
+//** footer - additional to _footer.css (.pets-page-footer) **//

@@ -1,0 +1,378 @@
+// -----------------------------------------------------------------------------
+// main page of project
+// -----------------------------------------------------------------------------
+body {
+  margin: 0 auto;
+}
+._lock {
+  overflow: hidden;
+}
+
+//** start-screen **//
+.start-screen {
+  background-image: image("start-screen-background.jpg");
+  background: image("noise_transparent@2x.png"),
+    radial-gradient(
+      100% 215.42% at 0% 0%,
+      $start-screen-gradient-start 0%,
+      $start-screen-gradient-end 100%
+    ),
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+      $start-screen-gradient-background;
+
+  // inside elements header (in /layout/_header.scss)
+
+  // inside elements content
+  .start-screen__wrapper {
+    @include media-large {
+      margin-top: 60px;
+      @include flex-horizontal(flex-start);
+
+      .start-screen__content {
+        margin: 163px 42px 0 0;
+
+        h2 {
+          @include text-h2($color-light-xl);
+          max-width: 310px;
+        }
+        p {
+          @include text-paragraph-l($color-dark-s);
+          padding: 42px 0;
+        }
+      }
+
+      img {
+        @include size(698px, 728px);
+      }
+    }
+    @include media-medium {
+      margin: 60px 69px 0 70px;
+      @include flex-vertical(center);
+
+      .start-screen__content {
+        margin: 0 55px 100px 55px;
+
+        h2 {
+          @include text-h2($color-light-xl);
+          padding-right: 150px;
+        }
+        p {
+          @include text-paragraph-l($color-dark-s);
+          padding: 42px 0;
+        }
+      }
+
+      img {
+        @include size(569px, 593px);
+        margin-left: 140px;
+      }
+    }
+    @include media-small {
+      max-width: $content-width-small;
+      margin: 0 auto;
+
+      @include flex-vertical(center);
+      margin-top: 60px;
+
+      .start-screen__content {
+        text-align: center;
+
+        h2 {
+          @include text-h3-mobile($color-light-xl);
+          padding: 0 20px;
+        }
+        p {
+          @include text-paragraph-l($color-dark-s);
+          padding: 42px 0;
+        }
+      }
+
+      img {
+        @include size(260px, 272px);
+        margin-top: 105px;
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+//** about **//
+.about {
+  background: $color-light-xl;
+
+  // inside elements
+  .about__wrapper {
+    @include media-large {
+      @include flex-horizontal(center, center);
+      gap: 120px;
+      padding: 80px 175px 100px 175px;
+
+      img {
+        @include size(300px, 408px);
+      }
+      .about__content {
+        @include flex-vertical(flex-start); //on right
+        gap: 25px;
+
+        h2 {
+          @include text-h3($color-dark-l);
+          max-width: 370px;
+        }
+        p {
+          @include text-paragraph-l($color-dark-l);
+        }
+      }
+    }
+
+    @include media-medium {
+      @include flex-vertical(center);
+      flex-direction: column-reverse; // change order - img after article
+      gap: 80px;
+      padding: 80px 138px 100px 138px;
+
+      img {
+        @include size(300px, 408px);
+      }
+      .about__content {
+        @include flex-vertical(flex-start); //on right
+        gap: 25px;
+
+        h2 {
+          @include text-h3($color-dark-l);
+          max-width: 370px;
+        }
+        p {
+          @include text-paragraph-l($color-dark-l);
+        }
+      }
+    }
+
+    @include media-small {
+      max-width: $content-width-small;
+      margin: 0 auto;
+
+      @include flex-vertical(center);
+      flex-direction: column-reverse; // change order - img after article
+      gap: 42px;
+      padding: 42px 15px;
+
+      img {
+        @include size(260px, 354px);
+      }
+
+      .about__content {
+        @include flex-vertical(center);
+        gap: 23px;
+
+        h2 {
+          @include text-h3-mobile($color-dark-l);
+          text-align: center;
+        }
+        p {
+          @include text-paragraph-l($color-dark-l);
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+//** pets **//
+.pets {
+  background: $color-light-l;
+
+  // inside elements
+  .pets__content {
+    @include media-large {
+      @include flex-vertical(center);
+      gap: 60px;
+      padding: 80px 0 100px 0;
+
+      h2 {
+        @include text-h3($color-dark-l);
+        text-align: center;
+        max-width: 400px;
+        margin: auto;
+      }
+    }
+    @include media-medium {
+      @include flex-vertical(center);
+      gap: 60px;
+      padding: 80px 0 100px 0;
+
+      h2 {
+        @include text-h3($color-dark-l);
+        text-align: center;
+        max-width: 400px;
+        margin: auto;
+      }
+    }
+    @include media-small {
+      max-width: $content-width-small;
+      margin: 0 auto;
+
+      @include flex-vertical(center);
+      gap: 42px;
+      padding: 40px 0 42px 0;
+
+      h2 {
+        @include text-h3-mobile($color-dark-l);
+        text-align: center;
+      }
+    }
+  }
+}
+
+//** help **//
+.help {
+  background: $color-light-xl;
+
+  // inside elements
+  .help__content {
+    @include media-large {
+      gap: 60px;
+      padding: 80px 0 100px 0;
+    }
+    @include media-medium {
+      gap: 60px;
+      padding: 78px 0 100px 0;
+    }
+    @include media-small {
+      max-width: $content-width-small;
+      margin: 0 auto;
+
+      gap: 42px;
+      padding: 40px 5px 42px 5px;
+    }
+    @include flex-vertical(center);
+
+    h2 {
+      @include text-h3($color-dark-l);
+      text-align: center;
+      max-width: 310px;
+      margin: auto;
+
+      @include media-small {
+        @include text-h3-mobile($color-dark-l);
+        max-width: 230px;
+        margin: auto;
+      }
+    }
+    .flex-list {
+      @include flex-horizontal(center, center);
+      flex-wrap: wrap;
+      align-content: space-between;
+      gap: 55px;
+
+      @include media-small {
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .flex-list__list-item {
+        @include flex-vertical(center);
+        gap: 30px;
+
+        @include media-large {
+          margin: 0 32px;
+        }
+        @include media-medium {
+          @include size(170px, 113px);
+          margin: 0 2px;
+        }
+        @include media-small {
+          @include size(130px, 87px);
+          gap: 20px;
+        }
+
+        p {
+          text-align: center;
+          @include text-h4($color-dark-l);
+
+          @include media-small {
+            @include text-h5($color-dark-l);
+          }
+        }
+      }
+    }
+  }
+}
+
+//** donation **//
+.donation {
+  background: $color-light-l;
+
+  // inside elements
+  .donation__wrapper {
+    @include media-large {
+      @include flex-horizontal(center, center);
+      gap: 30px;
+      padding: 79px 142px 98px 143px;
+
+      img {
+        @include size(505px, 261px);
+      }
+    }
+    @include media-medium {
+      @include flex-vertical(center);
+      flex-direction: column-reverse;
+      gap: 60px;
+      padding: 79px 102px 98px 101px;
+
+      img {
+        @include size(505px, 261px);
+      }
+    }
+    @include media-small {
+      max-width: $content-width-small;
+      margin: 0 auto;
+
+      @include flex-vertical(center, space-between);
+      flex-direction: column-reverse;
+      gap: 42px;
+      padding: 42px 10px 42px 10px;
+
+      img {
+        @include size(260px, 135px);
+      }
+    }
+  }
+
+  .donation__content {
+    @include flex-vertical(flex-start); // on right
+    gap: 20px;
+
+    h2 {
+      @include text-h3($color-dark-l);
+      max-width: 300px;
+    }
+    p {
+      @include text-h5($color-dark-l);
+    }
+    .legal {
+      @include text-donation-description($color-dark-m);
+    }
+
+    @include media-medium {
+      padding: 0 62px 0 61px;
+    }
+
+    @include media-small {
+      @include flex-vertical(center);
+      gap: 22px;
+
+      h2 {
+        @include text-h3-mobile($color-dark-l);
+        text-align: center;
+        max-width: 220px;
+      }
+      p {
+        letter-spacing: 0;
+      }
+      .legal {
+        text-align: justify;
+      }
+    }
+  }
+}

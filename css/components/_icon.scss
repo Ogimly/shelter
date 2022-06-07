@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the icons.
+// -----------------------------------------------------------------------------
+.icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.icon-card {
+  @include size(30px, 23px);
+  background-image: icon("icon-credit-card.svg");
+}
+
+.icon-close {
+  @include size(12px, 12px);
+  background-image: icon("icon-close.svg");
+}
+
+.icon-mail {
+  @include size(40px, 26px);
+  background-image: icon("icon-mail.svg");
+}
+.icon-phone {
+  @include size(40px, 32px);
+  background-image: icon("icon-phone.svg");
+}
+.icon-pin {
+  @include size(22px, 32px);
+  background-image: icon("icon-pin.svg");
+}
+
+.icon-help {
+  @include size($size-help-icon);
+  display: inline-block;
+  background-repeat: no-repeat;
+
+  @include media-small {
+    background-size: 50px 50px;
+    margin-left: 5px;
+  }
+}
+.icon-pet-food {
+  background-image: icon("icon-pet-food.svg");
+}
+.icon-transportation {
+  background-image: icon("icon-transportation.svg");
+}
+.icon-toys {
+  background-image: icon("icon-toys.svg");
+}
+.icon-bowls-and-cups {
+  background-image: icon("icon-bowls-and-cups.svg");
+}
+.icon-shampoos {
+  background-image: icon("icon-shampoos.svg");
+}
+.icon-vitamins {
+  background-image: icon("icon-vitamins.svg");
+}
+.icon-medicines {
+  background-image: icon("icon-medicines.svg");
+}
+.icon-collars-leashes {
+  background-image: icon("icon-collars-leashes.svg");
+}
+.icon-sleeping-area {
+  background-image: icon("icon-sleeping-area.svg");
+}
